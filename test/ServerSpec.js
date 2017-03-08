@@ -54,6 +54,20 @@ xdescribe('', function() {
           .end(done);
       });
 
+      it('Creates a unique short code per unique url', function(done) {
+        // request app
+        // post to links
+        // send url1
+        // expect 200
+        // save url1.code to a var
+        // post to links
+        // send url2
+        // expect 200
+        // save url2.code to var
+        // expect var1 to not equal var 2
+        // end
+      })
+
       it('New links create a database entry', function(done) {
         request(app)
           .post('/links')
