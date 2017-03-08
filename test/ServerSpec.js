@@ -55,17 +55,23 @@ xdescribe('', function() {
       });
 
       it('Creates a unique short code per unique url', function(done) {
-        // request app
-        // post to links
-        // send url1
-        // expect 200
-        // save url1.code to a var
-        // post to links
-        // send url2
-        // expect 200
-        // save url2.code to var
-        // expect var1 to not equal var 2
-        // end
+        let code1;
+        let code2;
+        request(app)
+          .post('/links')
+          .send({ 'url': 'http://www.ggbutton.com/'})
+          .expect(200)
+          .expect(function(res) {
+            var1 = res.body.code;
+          }).request(app)
+            .post('/links')
+            .send({ 'url': 'http://www.blizzard.com/'})
+            .expect(200)
+            .expect(function(res) {
+              var2 = res.body.code;
+              expect(var1).to.equal(var2);
+            })
+            .end(done);
       })
 
       it('New links create a database entry', function(done) {
