@@ -37,7 +37,6 @@ module.exports = function(grunt) {
         files: {
           'public/dist/build.min.js': 'public/dist/build.js',
           'public/dist/lib.min.js': 'public/dist/lib.js',
-          'public/dist/style.min.css': 'public/style.css'
         }
       }
     },
