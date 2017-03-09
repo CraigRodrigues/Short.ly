@@ -5,25 +5,8 @@ mongoose.connect('mongodb://localhost/shortly');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
-  console.log('connected!');
-  // All mongoose code goes in here
+  console.log('Mongoose connected!');
 });
-
-var Schema = mongoose.Schema;
-
-var urlSchema = new Schema({
-  url: String,
-  baseUrl:   String,
-  code: String,
-  title: String,
-  visits: Number
-});
-
-var usersSchema = new Schema({
-  username: String,
-  password:   String
-});
-
 
 module.exports = db;
 
