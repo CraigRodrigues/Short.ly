@@ -25,8 +25,8 @@ module.exports = function(grunt) {
         separator: ';',
       },
       dist: {
-        src: ['src/intro.js', 'src/project.js', 'src/outro.js'],
-        dest: 'dist/built.js',
+        src: 'public/**/*.js',
+        dest: 'dist/build.js',
       },
     },
 
