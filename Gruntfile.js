@@ -21,12 +21,12 @@ module.exports = function(grunt) {
     },
 
     concat: {
-      options: {
-        separator: ';',
-      },
-      dist: {
-        src: 'public/**/*.js',
-        dest: 'dist/build.js',
+      basic_and_extras: {
+        files: {
+          'public/dist/build.js':
+          ['public/client/app.js', 'public/client/createLinkView.js', 'public/client/link.js', 'public/client/links.js',
+           'public/client/linksView.js', 'public/client/linkView.js', 'public/client/router.js']
+        },
       },
     },
 
