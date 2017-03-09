@@ -120,7 +120,7 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('deploy', [
-    grunt.task.run('build')
+    'build', 'test', 'upload'
   ]);
 
 };

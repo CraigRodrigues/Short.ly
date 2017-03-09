@@ -1,5 +1,13 @@
 var path = require('path');
 var mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost/shortly');
+var db2 = mongoose.connection;
+db2.on('error', console.error.bind(console, 'connection error:'));
+db2.once('open', function() {
+  console.log('connected!');
+});
+
 var knex = require('knex')({
   client: 'sqlite3',
   connection: {
