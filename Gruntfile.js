@@ -33,6 +33,13 @@ module.exports = function(grunt) {
     },
 
     uglify: {
+      my_target: {
+        files: {
+          'public/dist/build.min.js': 'public/dist/build.js',
+          'public/dist/lib.min.js': 'public/dist/lib.js',
+          'public/dist/style.min.css': 'public/style.css'
+        }
+      }
     },
 
     eslint: {
@@ -76,6 +83,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-nodemon');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
 
   grunt.registerTask('server-dev', function (target) {
     grunt.task.run([ 'nodemon', 'watch' ]);
